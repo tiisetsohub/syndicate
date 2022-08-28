@@ -1,0 +1,56 @@
+.app-header {
+    background-color: #9c9b98;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.left-header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.right-header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*----------------------------------------------------------------*/
+
+.headingtext {
+    font-family: 'Inter';
+    font-weight: 900;
+}
+
+.link {
+    color: black;
+    font-size: 20px;
+    margin: 20px;
+    text-decoration: none;
+    position: relative;
+
+}
+
+.link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #595856;
+    transform-origin: bottom right;
+    transition: transform 0.40s ease-out;
+}
+
+.link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
