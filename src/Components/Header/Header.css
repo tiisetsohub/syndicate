@@ -8,9 +8,9 @@
 }
 
 .left-header {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .right-header {
@@ -21,6 +21,29 @@
 
 
 /*----------------------------------------------------------------*/
+
+.applogo {
+    width: 10%;
+}
+
+.applogo:hover {
+    cursor: pointer;
+}
+
+.avatar {
+    object-fit: cover;
+    width: 90px;
+    height: 90px;
+    border-radius : 50%;
+    border: 1px solid #B5B4B2;
+    margin: 10px 0;
+    
+}
+.btnlinks {
+    border: 0px solid;
+    background-color: transparent;
+    display: none;
+}
 
 .headingtext {
     font-family: 'Inter';

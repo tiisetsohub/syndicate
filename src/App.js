@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import SplashScreen from "./Screens/SplashScreen/SplashScreen";
 import Login from "./Screens/Login/Login";
+import Landing from "./Screens/Landing/Landing";
 
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element = {<SplashScreen />} />
         <Route path="/login" element = {<Login />} />
+        <Route path="/landing" element={<Landing />} />
+
 
       </Routes>
     </BrowserRouter>
