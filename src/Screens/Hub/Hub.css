@@ -1,0 +1,60 @@
+.body-hub{
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    color: white;
+    width: 100%;
+    padding: 10px;
+}
+
+.coldiv{
+    width: 100%;
+}
+
+.employeediv {
+    display: flex;
+    justify-content: space-evenly; 
+    flex-direction: row;
+    border: 1px solid white;
+    border-width: 0 0 1px 0;;
+    padding:0px 10px;
+    font-size: 1vw;
+}
+
+.employeediv:hover {
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+.employeedivhead{
+    display: flex;
+    justify-content: space-evenly; 
+    flex-direction: row;
+    border: 1px solid white;
+    border-width: 0 0 1px 0;;
+    padding:0px 10px;
+    font-size: 1vw;
+}
+
+.Hub {
+    background: linear-gradient(-45deg, #b6408b,#19aeff, #f5018f,  #34ff22);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

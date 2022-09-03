@@ -1,18 +1,47 @@
 .inputform {
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40vh;
+    margin-top: 30%;
+}
+
+.Login {
+    background: linear-gradient(-45deg, #f5018f, #b6408b , #6619ff, #ff6422);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /*----------------------------------------------------------*/
 
-.inputbox{
-    background-color: white;
-    width: 200%;
+.inputbox {
+    color: white;
+    background-color: transparent;
+    width: 30vw;
     height: 25px;
-    margin: 10px 0 ;
+    margin: 15px 0;
     border: 0px;
-    padding: 0 5px;
+    border: 5px solid white;
+    border-width: 0 0 1px 0;
+    padding: 0 10px;
+}
+
+.inputbox:-webkit-autofill,
+.inputbox:-webkit-autofill:hover,
+.inputbox:-webkit-autofill:focus,
+.inputbox:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
 }

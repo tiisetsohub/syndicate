@@ -1,16 +1,23 @@
 .app-header {
-    background-color: #9c9b98;
-    display:flex;
-    flex-direction:row;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     text-align: center;
-    padding: 0 10px;
+    padding: 0 80px;
+    padding-top: 30px;
 }
 
 .left-header {
     align-items: flex-start;
     display: flex;
     justify-content: flex-start;
+}
+
+.links-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .right-header {
@@ -30,15 +37,6 @@
     cursor: pointer;
 }
 
-.avatar {
-    object-fit: cover;
-    width: 90px;
-    height: 90px;
-    border-radius : 50%;
-    border: 1px solid #B5B4B2;
-    margin: 10px 0;
-    
-}
 .btnlinks {
     border: 0px solid;
     background-color: transparent;
@@ -51,8 +49,8 @@
 }
 
 .link {
-    color: black;
-    font-size: 20px;
+    color: white;
+    font-size: 1vw;
     margin: 20px;
     text-decoration: none;
     position: relative;
@@ -67,7 +65,7 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #595856;
+    background-color: white;
     transform-origin: bottom right;
     transition: transform 0.40s ease-out;
 }
@@ -77,3 +75,23 @@
     transform-origin: bottom left;
 }
 
+.link-sign {
+    color: white;
+    font-size: 1vw;
+    margin: 20px;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 0px 15px;
+    border-radius: 10px;
+}
+
+.link-sign:hover {
+    box-shadow: 0px 0px 8px 0px white;
+}
+
+@media only screen and (max-width: 750px) {
+    .applogo {
+        display:none;
+    }
+
+}

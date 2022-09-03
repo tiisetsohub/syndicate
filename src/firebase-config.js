@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword,signOut } from "firebase/auth";
 
 
 const firebaseConfig = {
@@ -17,6 +17,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth();
+
+export function signoutmethod(){
+    return signOut(auth)
+}
 
 export function loginmethod(email, password) {              //function used to login an exiting user on database
     return signInWithEmailAndPassword(auth, email, password)

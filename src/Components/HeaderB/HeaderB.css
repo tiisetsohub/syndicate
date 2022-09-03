@@ -1,0 +1,141 @@
+.app-header {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 80px;
+    padding-top: 30px;
+}
+
+.left-header {
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.links-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.right-header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*----------------------------------------------------------------*/
+
+.applogo {
+    width: 10%;
+}
+
+.applogo:hover {
+    cursor: pointer;
+}
+
+.avatar {
+    width: 60%;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.headingtext {
+    font-family: 'Inter';
+    font-weight: 900;
+}
+
+.inputboxb {
+    color: white;
+    background-color: transparent;
+    width: 20vw;
+    height: 15px;
+    margin: 20px;
+    margin-right: 0px;
+    border: 0px;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 1vw;
+}
+
+.link {
+    color: white;
+    font-size: 1vw;
+    margin: 20px;
+    text-decoration: none;
+    position: relative;
+
+}
+
+.link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.40s ease-out;
+}
+
+.link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.link-sign {
+    color: white;
+    font-size: 1vw;
+    margin: 20px;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 0px 15px;
+    border-radius: 10px;
+}
+
+.link-sign:hover {
+    box-shadow: 0px 0px 8px 0px white;
+}
+
+@media only screen and (max-width: 750px) {
+    .applogo {
+        display: none;
+    }    
+
+    .avatar {
+        display: none;
+    }
+
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: white;
+}
+
+#search-icon {
+    font-weight: 300;
+    color: white;
+    font-size: 1.5vw;
+    margin: 20px;
+    margin-right: 0px;
+    cursor: pointer;
+}
