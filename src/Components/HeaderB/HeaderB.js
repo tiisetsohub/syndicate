@@ -31,8 +31,8 @@ function HeaderB(props) {
                     <img src={avatar} alt="avatar" className="avatar" onClick={routeChange} />
                 </div>
                 <div className="right-header">                
-                    <div className="links-header" dis>
-                        <Link to="/" class="link">ABOUT</Link>
+                    <div className="links-header">
+                        <Link to="/about" class="link">ABOUT</Link>
                         <Link to="/" class="link">CONTACT</Link>
                         <Link to="/" class="link">HELP</Link>
                     </div>

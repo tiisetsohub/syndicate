@@ -1,16 +1,29 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState, useEffect, CSSProperties } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { db } from '../../firebase-config';
 import { collection, getDocs } from "firebase/firestore";
 import moment from "moment";
+import RingLoader from "react-spinners/RingLoader";
 
 
 import './Hub.css';
 import HeaderB from '../../Components/HeaderB/HeaderB';
 import Footer from '../../Components/Footer/Footer';
 import Adder from '../../Components/Adder/Adder';
+import Treeview from '../../Components/Treeview/Treeview';
+
+
+const override: CSSProperties = {
+    display: "block",
+    margin: "0 auto",
+    borderColor: "red",
+    marginTop: "25vh",
+    height: "100vh"
+};
 
 function Hub() {
+    let [loading, setLoading] = useState(true);
+    let [color, setColor] = useState("#ffffff");
     const { state } = useLocation();
     const { email } = state;
     const [employees, setEmployees] = useState([]);
@@ -27,6 +40,10 @@ function Hub() {
         }
 
         getEmployees()
+        setTimeout(() => {
+            setLoading(false);
+        },500)
+
     },[]);
 
     function handleEdit(employee){
@@ -80,6 +97,8 @@ function Hub() {
             setOrder('ASC')
         }
     }
+
+
     /*--------------------------------------------------------------------------*/
     
     return (
@@ -87,6 +106,7 @@ function Hub() {
             <div class='header'>
                 <HeaderB email = {email} setSearchTerm={setSearchTerm}/>
             </div>
+            {loading ? <RingLoader color={color} loading={loading} cssOverride={override} size={100} /> :
             <div class='body'>
                 <div className='body-hub'>
                     <div class = 'employeedivhead'>
@@ -103,7 +123,7 @@ function Hub() {
                         if (searchTerm === ""){
                             return employee
                         }
-                        else if (employee.Name.toLowerCase().includes(searchTerm.toLowerCase()) || employee.Department.toLowerCase().includes(searchTerm.toLowerCase()) || employee.Role.toLowerCase().includes(searchTerm.toLowerCase()) || employee.ReportingLineManager.toLowerCase().includes(searchTerm.toLowerCase())){
+                        else if (employee.Name.toLowerCase().includes(searchTerm.toLowerCase()) || employee.Department.toLowerCase().includes(searchTerm.toLowerCase()) || employee.Role.toLowerCase().includes(searchTerm.toLowerCase()) || employee.ReportingLineManager.toLowerCase().includes(searchTerm.toLowerCase()) || employee.EmployeeNo.toString().toLowerCase().includes(searchTerm.toLowerCase())){
                             return employee
                         }
                     }).map((employee) =>{
@@ -123,8 +143,9 @@ function Hub() {
                         )
                     })}
                 </div>
+                <Treeview email={email} employees={employees} />
                 <Adder email={email} employees={employees}/>
-            </div>
+            </div>}
             <div class='footer'>
                 <Footer />
             </div>

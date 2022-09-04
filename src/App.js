@@ -5,6 +5,8 @@ import Login from "./Screens/Login/Login";
 import Hub from "./Screens/Hub/Hub";
 import Edit from "./Screens/Edit/Edit";
 import Add from "./Screens/Add/Add";
+import About from "./Screens/About/About";
+import Tree from "./Screens/Tree/Tree";
 
 function App() {
   return (
@@ -15,7 +17,8 @@ function App() {
         <Route path="/hub" element={<Hub />} />
         <Route path="/edit/:id" element={<Edit />} />
         <Route path="/add" element={<Add />} />
-
+        <Route path="/about" element={<About />} />
+        <Route path="/tree" element={<Tree />} />
 
 
       </Routes>

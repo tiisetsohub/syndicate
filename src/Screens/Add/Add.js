@@ -36,6 +36,7 @@ function Add() {
             BirthDate: timestamp,
             Email: Email,
             Department: Department,
+            EmployeeNo: EmployeeNo,
             Level: Level,
             Role: Role,
             Salary: Salary,
