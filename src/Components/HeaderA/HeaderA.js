@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 
 import "./HeaderA.css";
-import Applogo from '../../Assets/Images/applogo-black.svg';
+import Applogo from '../../Assets/Images/applogo-white.PNG';
 
 function HeaderA() {
     let navigate = useNavigate();

@@ -14,6 +14,10 @@ function HeaderB(props) {
         navigate(path);
     }
 
+    const handleSearch = (event) => {
+        props.setSearchTerm(event.target.value)
+    }
+
     useEffect(() => {
         let word = (props.email).trim().toLowerCase();
         let md5 = require('md5');
@@ -32,10 +36,8 @@ function HeaderB(props) {
                         <Link to="/" class="link">CONTACT</Link>
                         <Link to="/" class="link">HELP</Link>
                     </div>
-                    <input type="text" class="inputboxb" placeholder="Search" />
-                    <span class="material-symbols-outlined" id='search-icon' >
-                        search
-                    </span>
+                    <input type="text" class="inputboxb" placeholder="Search" onChange={handleSearch}/>
+                    
                 </div>
             </header>
         </div>

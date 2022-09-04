@@ -22,12 +22,10 @@ function Login() {
 
     const handleEmail = (event) => {
         setEmail(event.target.value);
-        console.log(event.target.value);
     }
 
     const handlePassword = (event) => {
         setPassword(event.target.value);
-        console.log(event.target.value);
     }
 
     const handleLogin = async() => {
@@ -50,7 +48,7 @@ function Login() {
             </div>
             <div class='body'>
                 <div className="inputform">
-                    <input class="inputbox" type="text" placeholder="Email" onChange={handleEmail}/>
+                    <input class="inputbox" type="email" placeholder="Email" onChange={handleEmail}/>
                     <input class="inputbox" type="password" placeholder="Password" onChange={handlePassword}/>
                     <button class = 'button' onClick={handleLogin}>LOGIN</button>
                 </div>
