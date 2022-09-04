@@ -46,7 +46,7 @@ function Tree() {
         getEmployees()
         setTimeout(() => {
             setLoading(false);
-        }, 500)
+        }, 700)
 
     }, []);
 

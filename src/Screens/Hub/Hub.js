@@ -42,7 +42,7 @@ function Hub() {
         getEmployees()
         setTimeout(() => {
             setLoading(false);
-        },500)
+        },700)
 
     },[]);
 
