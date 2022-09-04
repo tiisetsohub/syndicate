@@ -5,11 +5,11 @@ function Footer() {
         <div className="Footer">
             <footer>
                 <p className="footer-text">
-                    W3Schools is optimized for learning and training. Examples might be simplified to improve reading and learning. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using W3Schools, you agree to have read and accepted our terms of use, cookie and privacy policy.
+                    The personnel hierarchy of a company can be viewed and managed on the highly customizable website Syndicate. Users of the website can manage teams, relocate, and keep an eye on their current staff. Additionally, it makes businesses run more efficiently.
                 </p>
                 <p className="footer-text">
-                    Copyright 1999-2022 by Refsnes Data. All Rights Reserved.
-                    W3Schools is Powered by W3.CSS.
+                    Copyright 2022-2022 by Tiisetso. All Rights Reserved.
+                    Syndicate is Powered by Firebase.
                 </p>
             </footer>
         </div>
