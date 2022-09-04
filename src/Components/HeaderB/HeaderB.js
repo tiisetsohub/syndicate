@@ -10,8 +10,7 @@ function HeaderB(props) {
     /*----------------------------------------------------------------- */
 
     const routeChange = () => {
-        let path = '/';
-        navigate(path);
+        navigate(-1);
     }
 
     const handleSearch = (event) => {
@@ -32,9 +31,8 @@ function HeaderB(props) {
                 </div>
                 <div className="right-header">                
                     <div className="links-header">
-                        <Link to="/about" class="link">ABOUT</Link>
-                        <Link to="/" class="link">CONTACT</Link>
-                        <Link to="/" class="link">HELP</Link>
+                        <Link to="/about" state={{ inApp: false }} class="link">ABOUT</Link>
+                        <Link to="/contact" state={{ inApp: false }} class="link">CONTACT</Link>
                     </div>
                     <input type="text" class="inputboxb" placeholder="Search" onChange={handleSearch}/>
                     

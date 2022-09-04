@@ -7,6 +7,7 @@ import Edit from "./Screens/Edit/Edit";
 import Add from "./Screens/Add/Add";
 import About from "./Screens/About/About";
 import Tree from "./Screens/Tree/Tree";
+import Contact from "./Screens/Contact/Contact";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/edit/:id" element={<Edit />} />
         <Route path="/add" element={<Add />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/tree" element={<Tree />} />
 
 

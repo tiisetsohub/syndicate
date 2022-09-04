@@ -123,7 +123,7 @@ function Hub() {
                         if (searchTerm === ""){
                             return employee
                         }
-                        else if (employee.Name.toLowerCase().includes(searchTerm.toLowerCase()) || employee.Department.toLowerCase().includes(searchTerm.toLowerCase()) || employee.Role.toLowerCase().includes(searchTerm.toLowerCase()) || employee.ReportingLineManager.toLowerCase().includes(searchTerm.toLowerCase()) || employee.EmployeeNo.toString().toLowerCase().includes(searchTerm.toLowerCase())){
+                        else if (employee.Name.toLowerCase().includes(searchTerm.toLowerCase()) || employee.Department.toLowerCase().includes(searchTerm.toLowerCase()) || employee.Role.toLowerCase().includes(searchTerm.toLowerCase()) || employee.ReportingLineManager.toLowerCase().includes(searchTerm.toLowerCase()) || employee.EmployeeNo.toString().toLowerCase().includes(searchTerm.toLowerCase()) || employee.Surname.toLowerCase().includes(searchTerm.toLowerCase())){
                             return employee
                         }
                     }).map((employee) =>{

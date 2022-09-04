@@ -1,21 +1,29 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+
 
 import './About.css';
-import HeaderA from '../../Components/HeaderA/HeaderA';
+import HeaderC from '../../Components/HeaderC/HeaderC';
+import HeaderD from '../../Components/HeaderD/HeaderD';
 import Footer from '../../Components/Footer/Footer';
 
 
 function About() {
+    const { state } = useLocation();
+    const { inApp } = state;
   return (
     <div className = 'About'>
         <div class = 'header'>
-            <HeaderA />
+            {inApp ? 
+                <HeaderD />:
+                <HeaderC />
+            }
         </div>
         <div class = 'body'>
             <div className = 'body-about'>
-                <h1>SYNIDCATE</h1>
-                <h3>Organising teams has never been easier.</h3>
-                <h6>The personnel hierarchy of a company can be viewed and managed on the highly customizable website Syndicate. Users of the website can manage teams, relocate, and keep an eye on their current staff. Additionally, it makes businesses run more efficiently.</h6>
+                <h1>ABOUT</h1>
+                <h3>A software tool for organising personal hierarchy</h3>
+                <h6>Built using React.js, Node.js and Firebase</h6>
             </div>
         </div>
         <div class = 'footer'>

@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 
-import "./HeaderA.css";
+import "./HeaderD.css";
 import Applogo from '../../Assets/Images/applogo-white.PNG';
 
-function HeaderA() {
+function HeaderD() {
     let navigate = useNavigate();
 
     const routeChange = () => {
@@ -14,19 +14,19 @@ function HeaderA() {
         <div className="Header">
             <header className="app-header">
                 <div className="left-header">
-                        <img src={Applogo} alt="Logo" className="applogo" onClick={routeChange} />
+                    <img src={Applogo} alt="Logo" className="applogo" onClick={routeChange} />
                 </div>
                 <div className="right-header">
                     <div className="links-header" >
-                        <Link to="/about" state={{inApp:true}} class="link">ABOUT</Link>
-                        <Link to="/contact" state={{ inApp: true }}class="link">CONTACT</Link>
+                        <Link to="/about" state={{ inApp: true }} class="link">ABOUT</Link>
+                        <Link to="/contact" state={{ inApp: true }} class="link">CONTACT</Link>
                         <Link to="/login" className="link-sign">LOGIN</Link>
-
                     </div>
+
                 </div>
             </header>
         </div>
     );
 }
 
-export default HeaderA;
+export default HeaderD;

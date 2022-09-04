@@ -4,7 +4,7 @@
 }
 
 .About {
-    background: linear-gradient(-45deg, #f5018f, #ff6422, #6619ff, #b6408b);
+    background: linear-gradient(-45deg, #f5018f, #ff6422, #b6408b, #6619ff);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
