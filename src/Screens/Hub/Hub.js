@@ -16,6 +16,7 @@ function Hub() {
     const [employees, setEmployees] = useState([]);
     const employeeRef = collection(db, 'Employees');
     const [searchTerm, setSearchTerm] = useState('');
+    const [order, setOrder] = useState('ASC');
     let navigate = useNavigate();
 
     /*--------------------------------------------------------------------------*/
@@ -46,6 +47,39 @@ function Hub() {
         } });
     }
 
+    const sorting = (col) => {
+        if (order === 'ASC'){
+            const sorted = [...employees].sort((a, b) =>
+                a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
+            );
+            setEmployees(sorted);
+            setOrder('DSC')
+        }
+        if (order === 'DSC') {
+            const sorted = [...employees].sort((a, b) =>
+                a[col].toLowerCase() < b[col].toLowerCase() ? 1 : -1
+            );
+            setEmployees(sorted);
+            setOrder('ASC')
+        }
+    }
+
+    const sortingNo = (col) => {
+        if (order === 'ASC') {
+            const sorted = [...employees].sort((a, b) =>
+                a[col] > b[col] ? 1 : -1
+            );
+            setEmployees(sorted);
+            setOrder('DSC')
+        }
+        if (order === 'DSC') {
+            const sorted = [...employees].sort((a, b) =>
+                a[col] < b[col] ? 1 : -1
+            );
+            setEmployees(sorted);
+            setOrder('ASC')
+        }
+    }
     /*--------------------------------------------------------------------------*/
     
     return (
@@ -56,20 +90,20 @@ function Hub() {
             <div class='body'>
                 <div className='body-hub'>
                     <div class = 'employeedivhead'>
-                        <div class = 'coldiv'><h6>Name</h6></div>
-                        <div class = 'coldiv'><h6>Surname</h6></div>
-                        <div class = 'coldiv'><h6>Birth Date</h6></div>
-                        <div class = 'coldiv'><h6>Employee Number</h6></div>
-                        <div class = 'coldiv'><h6>Department</h6></div>
-                        <div class = 'coldiv'><h6>Role</h6></div>
-                        <div class = 'coldiv'><h6>Salary</h6></div>
-                        <div class = 'coldiv'><h6>Reporting Line Manager</h6></div>
+                        <div class='coldiv' onClick={() => sorting('Name')}><h6>Name</h6></div>
+                        <div class='coldiv' onClick={() => sorting('Surname')}><h6>Surname</h6></div>
+                        <div class='coldiv'><h6>Birth Date</h6></div>
+                        <div class='coldiv' onClick={() => sortingNo('EmployeeNo')}><h6>Employee Number</h6></div>
+                        <div class='coldiv' onClick={() => sorting('Department')}><h6>Department</h6></div>
+                        <div class='coldiv' onClick={() => sorting('Role')}><h6>Role</h6></div>
+                        <div class='coldiv' onClick={() => sortingNo('Salary')}><h6>Salary</h6></div>
+                        <div class='coldiv' onClick={() => sorting('ReportingLineManager')}><h6>Reporting Line Manager</h6></div>
                     </div>
                     {employees.filter((employee) => {
                         if (searchTerm === ""){
                             return employee
                         }
-                        else if (employee.Name.toLowerCase().includes(searchTerm.toLowerCase()) || employee.Department.toLowerCase().includes(searchTerm.toLowerCase()) || employee.Role.toLowerCase().includes(searchTerm.toLowerCase())){
+                        else if (employee.Name.toLowerCase().includes(searchTerm.toLowerCase()) || employee.Department.toLowerCase().includes(searchTerm.toLowerCase()) || employee.Role.toLowerCase().includes(searchTerm.toLowerCase()) || employee.ReportingLineManager.toLowerCase().includes(searchTerm.toLowerCase())){
                             return employee
                         }
                     }).map((employee) =>{
