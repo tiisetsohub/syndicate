@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 
@@ -31,6 +31,8 @@ function Edit() {
     const [newRole, setNewRole] = useState(Role);
     const [newSalary, setNewSalary] = useState(Salary);
     const [newReportingLineManager, setNewReportingLineManager] = useState(ReportingLineManager);
+    const [uniqueEmps, setUniqueEmps] = useState([]);
+
 
 
 
@@ -66,6 +68,16 @@ function Edit() {
         }
     }
 
+    useEffect(() => {
+        Employees.map((employee) => {
+            if (!uniqueEmps.includes(employee.ReportingLineManager) && employee.Level >= Level) {
+                setUniqueEmps(uniqueEmps => [...uniqueEmps, employee.ReportingLineManager])
+            }
+        })
+    }, []);
+    const uniemps = [...new Set(uniqueEmps)];
+    console.log(uniemps)
+
 
     /*---------------------------------------------------------------*/
     return (
@@ -83,14 +95,14 @@ function Edit() {
                     <input type="text" class="inputboxedit" placeholder={Role} onChange={(event) => { setNewRole(event.target.value) }} />
                     <input type="number" class="inputboxedit" placeholder={Salary} min={Salary} onChange={(event) => { setNewSalary(event.target.valueAsNumber) }} />
                     <select class="inputboxedit" label="RLM" value={ReportingLineManager} onChange={(event) => { setNewReportingLineManager(event.target.value) }}>
-                        {Employees.filter((employee) => {
-                            let reportsplit = employee.ReportingLineManager.split(" ");
-                            if (employee.ReportingLineManager !== "-" && parseInt(reportsplit[2]) !== EmployeeNo && employee.Level >= Level) {
-                                return employee
+                        {uniemps.filter((ReportingLineManager) => {
+                            let reportsplit = ReportingLineManager.split(" ");
+                            if (ReportingLineManager !== "" && parseInt(reportsplit[2]) !== EmployeeNo) {
+                                return ReportingLineManager
                             }
-                        }).map((employee) => (
-                            <option key={employee.EmployeeNo} value={employee.ReportingLineManager}>
-                                {employee.ReportingLineManager}
+                        }).map((ReportingLineManager) => (
+                            <option key={ReportingLineManager} value={ReportingLineManager}>
+                                {ReportingLineManager}
                             </option>
                         ))}
                     </select>
